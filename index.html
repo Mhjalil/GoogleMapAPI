@@ -9,23 +9,26 @@
 </head>
 
 <body>
-    <h1>My Google Map Demo</h1>
+    <h1>Marco's Google Map Demo</h1>
     <div id="map"></div>
     <script>
         function initMap(){
+
             // Map options
+
             var Brisbane = {lat:-27.4698,lng:153.0251}
             var myLocation = {lat:-27.48502,lng:152.99988}
             var options = {
-                zoom:8,
+                zoom:7,
                 center: Brisbane
             }
             
             // New map 
+
             var map = new google.maps.Map(document.getElementById('map'),options)
             
             // Add marker
-            
+
             var marker = new google.maps.Marker({
                 position: myLocation,
                 map: map
@@ -46,9 +49,7 @@
                 position: beach,
                 map: map,
                 icon: image
-            }); 
-            
-            
+            });     
         }
     </script>
     <script async defer
