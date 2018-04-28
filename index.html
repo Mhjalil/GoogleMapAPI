@@ -27,7 +27,7 @@
 
             var map = new google.maps.Map(document.getElementById('map'),options)
             
-            // Add marker
+            // Add Home marker
 
             var marker = new google.maps.Marker({
                 position: myLocation,
@@ -49,6 +49,17 @@
                 position: beach,
                 map: map,
                 icon: image
+            });
+
+            // Add Beach marker
+
+            var infoBeachWindow = new google.maps.InfoWindow({
+                content :'<h4>Beach</h4>'
+            });
+
+            beachMarker.addListener('click',function(){
+                infoBeachWindow.open(map, beachMarker);
+
             });     
         }
     </script>
