@@ -1,2 +1,2 @@
 <h1>Google Map API Demo</h1>
-<p>This is a test web application for Google MAP API</p>
+<p>This is a test web application for Google MAP API, to add a simple Google map with a marker to a web page. It suits people with beginner or intermediate knowledge of HTML and CSS, and a little knowledge of JavaScript. </p>
