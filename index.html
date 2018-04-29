@@ -17,7 +17,7 @@
             // Map options
 
             var Brisbane = {lat:-27.4698,lng:153.0251}
-            var myLocation = {lat:-27.48502,lng:152.99988}
+            
             var options = {
                 zoom:7,
                 center: Brisbane
@@ -29,6 +29,7 @@
             
             // Add Home marker
 
+            var myLocation = {lat:-27.48502,lng:152.99988}
             var marker = new google.maps.Marker({
                 position: myLocation,
                 map: map
@@ -43,6 +44,8 @@
 
             });
             
+            // Add Beach marker
+
             var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
             var beach = {lat: -28.00226, lng: 153.43147}
             var beachMarker = new google.maps.Marker({
@@ -51,8 +54,6 @@
                 icon: image
             });
 
-            // Add Beach marker
-
             var infoBeachWindow = new google.maps.InfoWindow({
                 content :'<h4>Beach</h4>'
             });
@@ -60,7 +61,26 @@
             beachMarker.addListener('click',function(){
                 infoBeachWindow.open(map, beachMarker);
 
-            });     
+            }); 
+
+            // Add a point
+
+            var wellingtonPoint  = {lat:-27.46596,lng:153.23853}
+            var pointMarker = new google.maps.Marker({
+                position: wellingtonPoint,
+                map: map
+            });
+
+            var infoPointWindow = new google.maps.InfoWindow({
+                content :'<h4>Wellington Point</h4>'
+            });
+
+            pointMarker.addListener('click',function(){
+                infoPointWindow.open(map, pointMarker);
+
+            });
+
+
         }
     </script>
     <script async defer
