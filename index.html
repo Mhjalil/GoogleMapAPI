@@ -9,14 +9,14 @@
 </head>
 
 <body>
-
+    
     <h1>Marco's Google Map Demo</h1>
     <div id="map"></div>
     <script>
         function initMap(){
-
+            
             // Map options
-
+            
             var Brisbane = {lat:-27.4698,lng:153.0251}
             var options = {
                 zoom:7,
@@ -24,28 +24,28 @@
             }
             
             // New map 
-
+            
             var map = new google.maps.Map(document.getElementById('map'),options)
             
             // Add Home marker
-
+            
             var myLocation = {lat:-27.48502,lng:152.99988}
             var marker = new google.maps.Marker({
                 position: myLocation,
                 map: map
             });
-
+            
             var infoWindow = new google.maps.InfoWindow({
                 content :'<h4>My Home</h4>'
             });
-
+            
             marker.addListener('click',function(){
                 infoWindow.open(map, marker);
-
+                
             });
             
             // Add Beach marker
-
+            
             var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
             var beach = {lat: -28.00226, lng: 153.43147}
             var beachMarker = new google.maps.Marker({
@@ -53,42 +53,45 @@
                 map: map,
                 icon: image
             });
-
+            
             var infoBeachWindow = new google.maps.InfoWindow({
                 content :'<h4>Beach</h4>'
             });
-
+            
             beachMarker.addListener('click',function(){
                 infoBeachWindow.open(map, beachMarker);
-
+                
             }); 
-
+            
             // Add a point
-
+            
             var wellingtonPoint  = {lat:-27.46596,lng:153.23853}
             var pointMarker = new google.maps.Marker({
                 position: wellingtonPoint,
                 map: map
             });
-
+            
             var infoPointWindow = new google.maps.InfoWindow({
                 content :'<h4>Wellington Point</h4>'
             });
-
+            
             pointMarker.addListener('click',function(){
                 infoPointWindow.open(map, pointMarker);
-
+                
             });
         }
     </script>
     <br/>
-    <h3>Address</h3>
+    <h3>My Address</h3>
     <p>40 Duncan St <br/>
-            West End 4101 QLD<br>
-            Australia</p>
+        West End 4101 QLD<br>
+        Australia</p>
+    <h3>Contact Me</h3>
+    <p>me@marcojalili.com<br/>
+        0401 97 84 85</p>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02hYE9vXQeHEZZu7l4dQJzkzxTWfA6zk&callback=initMap">
-</script>
-</body>
-
-</html>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02hYE9vXQeHEZZu7l4dQJzkzxTWfA6zk&callback=initMap">
+    </script>
+    </body>
+    
+    </html>
