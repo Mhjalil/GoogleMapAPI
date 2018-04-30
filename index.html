@@ -27,7 +27,7 @@
             
             var map = new google.maps.Map(document.getElementById('map'),options)
             
-            // Add Home marker
+            /* // Add Home marker
             
             var myLocation = {lat:-27.48502,lng:152.99988}
             var marker = new google.maps.Marker({
@@ -42,9 +42,10 @@
             marker.addListener('click',function(){
                 infoWindow.open(map, marker);
                 
-            });
+            }); */
             
-            // Add Beach marker
+            
+            /* // Add Beach marker
             
             var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
             var beach = {lat: -28.00226, lng: 153.43147}
@@ -61,9 +62,9 @@
             beachMarker.addListener('click',function(){
                 infoBeachWindow.open(map, beachMarker);
                 
-            }); 
+            });  */
             
-            // Add a point
+            /* // Add a point
             
             var wellingtonPoint  = {lat:-27.46596,lng:153.23853}
             var pointMarker = new google.maps.Marker({
@@ -78,7 +79,20 @@
             pointMarker.addListener('click',function(){
                 infoPointWindow.open(map, pointMarker);
                 
-            });
+            }); */
+            
+            addMarker({lat:-27.48502,lng:152.99988});
+            addMarker({lat: -28.00226, lng: 153.43147});
+
+            // Add Marker Function
+            function addMarker(coords){
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    map: map,
+                    icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                });
+                
+            }
         }
     </script>
     <br/>
@@ -86,12 +100,12 @@
     <p>40 Duncan St <br/>
         West End 4101 QLD<br>
         Australia</p>
-    <h3>Contact Me</h3>
-    <p>me@marcojalili.com<br/>
-        0401 97 84 85</p>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02hYE9vXQeHEZZu7l4dQJzkzxTWfA6zk&callback=initMap">
-    </script>
+        <h3>Contact Me</h3>
+        <p>me@marcojalili.com<br/>
+            0401 97 84 85</p>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA02hYE9vXQeHEZZu7l4dQJzkzxTWfA6zk&callback=initMap">
+        </script>
     </body>
     
     </html>
