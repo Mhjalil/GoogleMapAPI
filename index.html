@@ -81,17 +81,22 @@
                 
             }); */
             
-            addMarker({lat:-27.48502,lng:152.99988});
-            addMarker({lat: -28.00226, lng: 153.43147});
-            addMarker({lat:-27.46596,lng:153.23853});
+            addMarker({coords:{lat:-27.48502,lng:152.99988}});
+
+            addMarker({
+                coords:{lat: -28.00226, lng: 153.43147},
+                iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                });
+
+            addMarker({coords:{lat:-27.46596,lng:153.23853}});
             
 
             // Add Marker Function
-            function addMarker(coords){
+            function addMarker(props){
                 var marker = new google.maps.Marker({
-                    position: coords,
+                    position: props.coords,
                     map: map,
-                  // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                    icon: props.iconImage
                 });
                 
             }
