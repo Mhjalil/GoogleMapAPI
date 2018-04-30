@@ -16,7 +16,6 @@
         function initMap(){
             
             // Map options
-            
             var Brisbane = {lat:-27.4698,lng:153.0251}
             var options = {
                 zoom:7,
@@ -24,7 +23,6 @@
             }
             
             // New map 
-            
             var map = new google.maps.Map(document.getElementById('map'),options)
             
             /* // Add Home marker
@@ -81,14 +79,21 @@
                 
             }); */
             
-            addMarker({coords:{lat:-27.48502,lng:152.99988}});
+            addMarker({
+                coords:{lat:-27.48502,lng:152.99988},
+                content: '<h4>My Home</h4>'
+                });
 
             addMarker({
                 coords:{lat: -28.00226, lng: 153.43147},
-                iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                content: '<h4>Surfer Pradise Beach</h4>'
                 });
 
-            addMarker({coords:{lat:-27.46596,lng:153.23853}});
+            addMarker({
+                coords:{lat:-27.46596,lng:153.23853},
+                content: '<h4>Wellingtone Point</h4>'
+                });
             
 
             // Add Marker Function
@@ -103,6 +108,19 @@
             if(props.iconImage){
                 // Set icon image
                 marker.setIcon(props.iconImage)
+            }
+
+            //Check content
+            if(props.content){
+                var infoWindow = new google.maps.InfoWindow({
+                content :props.content
+            });
+            
+            marker.addListener('click',function(){
+                infoWindow.open(map, marker);
+                
+            });
+
             }
                 
             }
