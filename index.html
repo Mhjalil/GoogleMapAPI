@@ -78,8 +78,31 @@
                 infoPointWindow.open(map, pointMarker);
                 
             }); */
+
+            //Array of markers
+            var markers = [
+            {
+                coords:{lat:-27.48502,lng:152.99988},
+                content: '<h4>My Home</h4>'
+                },
+                {
+                coords:{lat: -28.00226, lng: 153.43147},
+                iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                content: '<h4>Surfer Pradise Beach</h4>'
+                },
+                {
+                coords:{lat:-27.46596,lng:153.23853},
+                content: '<h4>Wellingtone Point</h4>'
+                }
+            ]
             
-            addMarker({
+            //Loop through markers
+            for (let i = 0; i < markers.length; i++) {
+                // Add marker
+                addMarker(markers[i]);
+                }
+
+            /* addMarker({
                 coords:{lat:-27.48502,lng:152.99988},
                 content: '<h4>My Home</h4>'
                 });
@@ -93,7 +116,7 @@
             addMarker({
                 coords:{lat:-27.46596,lng:153.23853},
                 content: '<h4>Wellingtone Point</h4>'
-                });
+                }); */
             
 
             // Add Marker Function
